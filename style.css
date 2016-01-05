@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'onryou';
+    src: url('./onryou.sub.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.popup {
+    position: absolute;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    border-style: outset;
+}
+
+.headerbar {
+    color: #dddddd;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#000830', endColorstr = '#7097ad');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#000830', endColorstr = '#7097ad')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(left, #000830, #7097ad);
+    background-image: -ms-linear-gradient(left, #000830, #7097ad);
+    background-image: -o-linear-gradient(left, #000830, #7097ad);
+    background-image: -webkit-gradient(linear, left top, right top, from(#000830), to(#7097ad));
+    background-image: -webkit-linear-gradient(left, #000830, #7097ad);
+    background-image: linear-gradient(left, #000830, #7097ad);
+    z-index: 1;
+}
+
+.headerbar div{
+    display: inline;
+}
+
+.address {
+    font-size:16px;
+    margin-top: -2px;
+}
+.close,.maximize,.minimize {
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    padding: 1px;
+    text-align: center;
+    color: black;
+    background-color: #dddddd;
+    border-width: thin;
+    border-style: outset;
+}
+
+.favicon {
+    background-color: #dddddd;
+    width: 22px;
+    margin: 2px;
+}
+
+.content,.uracontent {
+    padding: 10px 20px;
+    color: black;
+    font-family: 'onryou';
+    font-size: 48px;
+}
+
+.content>div{
+    display: table-cell;
+}
+
+.uracontent {
+    position: absolute;
+    margin: -10px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    margin: auto;
+    display: none;
+    font-size: 18em;
+    font-weight: 300;
+}
+
+.uracontent div {
+    display: inline-block;
+}
+
+.anataha {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+}
+
+.uraanataha {
+    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+}
+
+.bar {
+    font-size: 120px;
+    overflow: hidden;
+}
+
+.sukidesuka {
+    transform: rotate(8deg);
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+}

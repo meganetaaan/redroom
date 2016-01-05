@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+<div class="popup">
+    <div class="headerbar">
+        <img class="favicon" src="favicon.png">
+        <div class="address">http://meganetaaan.jp/</div>
+        <div class="close">×</div>
+        <div class="maximize">◻︎</div>
+        <div class="minimize">＿</div>
+    </div>
+    <div class="content">
+        <div class="anataha">あなたは</div><div class="bar">|</div>
+        <div class="sukidesuka">好きですか？</div>
+    </div>
+    <div class="uracontent">
+        <div class="uraanataha">あなたは赤い部屋が好きですか？</div>
+    </div>
+</div>
+</body>
+    <script type="text/javascript">
+        (function(){
+        var say = function(text, opt){
+            var rate = opt && opt.rate !== undefined ? opt.rate : 1.2;
+            var pitch = opt && opt.pitch !== undefined ? opt.pitch : 2;
+            var speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.lang = 'ja-JP';
+            speech.rate = rate;
+            speech.pitch = pitch;
+            speechSynthesis.speak(speech);
+        };
+
+        window.onload = function(){ say('あなたは、好きですか?'); };
+        var closeButton = document.getElementsByClassName('close')[0];
+        var minimizeButton = document.getElementsByClassName('minimize')[0];
+        var maximizeButton = document.getElementsByClassName('maximize')[0];
+        var popupWindow = document.getElementsByClassName('popup')[0];
+        var reopen = function(){
+            popupWindow.style.visibility = 'hidden';
+            setTimeout(function(){
+                popupWindow.style.visibility = 'visible';
+                say('あなたは、好きですか?');
+            }, 500);
+        };
+        var maximize = function(){
+            popupWindow.style.visibility = 'hidden';
+            popupWindow.style.width = '100%';
+            popupWindow.style.height = '100%';
+            document.getElementsByClassName('content')[0].style.display = 'none';
+            document.getElementsByClassName('uracontent')[0].style.display = 'inherit';
+            closeButton.onclick = maximize;
+            minimizeButton.onclick = maximize;
+            maximizeButton.onclick = null;
+            setTimeout(function(){
+                popupWindow.style.visibility = 'visible';
+                say('あなたは赤い部屋が好きですか?', {rate: 0.5, pitch: 0.01});
+            }, 500);
+        };
+
+        closeButton.onclick = reopen;
+        minimizeButton.onclick = reopen;
+        maximizeButton.onclick = maximize;
+        }());
+    </script>
+</html>
